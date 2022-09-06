@@ -1,0 +1,5 @@
+{
+  "sparql-executor.endpoints": ["https://query.wikidata.org/"],
+  "deno.enable": false,
+  "deno.unstable": false
+}

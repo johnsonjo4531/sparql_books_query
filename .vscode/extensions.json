@@ -1,0 +1,7 @@
+{
+  "recommendations": [
+    "stardog-union.vscode-langserver-sparql",
+    "stardog-union.stardog-rdf-grammars",
+    "Zazuko.sparql-snippets"
+  ]
+}

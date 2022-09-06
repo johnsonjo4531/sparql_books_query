@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "build": "parcel build script.ts",
+    "start": "node dist/main.js"
+  },
+  "type": "module",
+  "source": "./script.ts",
+  "main": "dist/main.js",
+  "devDependencies": {
+    "@types/node": "^18.7.15",
+    "parcel": "^2.7.0"
+  },
+  "dependencies": {
+    "typescript": "^4.8.2"
+  }
+}

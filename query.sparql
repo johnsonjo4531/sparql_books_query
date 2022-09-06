@@ -1,0 +1,39 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <http://dbpedia.org/property/>
+
+SELECT DISTINCT *
+WHERE
+{
+    ?book rdf:type dbo:Book ;
+        dbo:isbn ?isbn .
+
+    OPTIONAL {
+        ?book rdfs:label ?title .
+        FILTER (langMatches(lang(?title), "EN")) .
+    }
+    
+    OPTIONAL {
+        ?book dbo:author ?author .
+    }
+    OPTIONAL {
+        ?book dbp:genre ?genre .
+    }
+    OPTIONAL {
+        ?book dbo:literaryGenre ?litGenre .
+    }
+    OPTIONAL {
+        ?book dbo:numberOfPages ?numPages .
+    }
+    OPTIONAL {
+        ?book dbo:abstract ?abstract .
+        FILTER (langMatches(lang(?abstract), "EN")) .
+    }
+    OPTIONAL {
+        ?book dbo:publisher ?publisher .
+    }
+}
+GROUP BY ?book
+LIMIT 100
+OFFSET 0
